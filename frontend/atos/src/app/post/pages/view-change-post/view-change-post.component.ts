@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { Post } from './../../interfaces/post.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewChangePostComponent implements OnInit {
 
-  constructor() { }
+  private postData: Post;
+
+  constructor(private route:Router) { }
 
   ngOnInit() {
+    this.postData = history.state.data;
+    //console.log(this.postData);
   }
+
+  btnClick () {
+    this.route.navigateByUrl('/post/post');
+  };
 
 }

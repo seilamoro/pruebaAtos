@@ -1,1 +1,39 @@
-<p>post works!</p>
+
+<div class="container">
+    <form [formGroup]="postForm" (ngSubmit)="onButton()" id="formPost">
+
+        <div class="element">
+            <div class="elementLeft"><label class="form-label">Usuario:</label></div>
+            <div class="elementRight"><select class="form-control"
+                    formControlName="userSelect" *ngIf="isNew" [(ngModel)]="userSelect" id="user">
+                <option value="0"> -- Seleccione Usuario -- </option>
+                <option *ngFor="let user of userList"
+                        [value]="user.id"> {{ user.name }} </option>
+            </select>
+            <label class="form-label" *ngIf="!isNew">{{ user.name }}</label>
+            </div>
+        </div>
+        <div class="element">
+            <div class="elementLeft"><label class="form-label">Titulo:</label></div>
+            
+            <div class="elementRight"> <input formControlName="title" type="text" [(ngModel)]="titleInput" id="title"></div>
+        </div>
+        <div class="element">
+            <div class="elementLeft"><label class="form-label">Texto:</label></div>
+            <div class="elementRight"><textarea id="textTextArea" formControlName="textArea" [(ngModel)]="textTextArea" id="text">{{textTextArea}}</textarea></div>
+        </div>
+        <div class="elementButtons">
+            <div class="elementButtonRight"> <button class="btn"
+                    type="submit" id="formButton">
+                    {{setButton()}}
+            </button></div>
+        </div>
+    </form>
+    
+    <pre id="formError" *ngIf="resultFormNotValid">Introduzca los datos del formulario</pre>
+    <pre id="newOk" *ngIf="resultOk && isNew">Post añadido correctamente</pre>
+    <pre id="editOk" *ngIf="resultOk && !isNew">Post editado correctamente</pre>
+    <pre id="backError" *ngIf="resultError">Se ha producido un error en el servidor, vuelva a intentarlo más tarde</pre>
+
+</div>
+

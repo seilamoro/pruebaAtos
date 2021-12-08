@@ -1,0 +1,55 @@
+button{
+    display: block; margin: 0 auto;
+}
+.elementButtons{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.elementButtonLeft{
+    width: 48%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.elementButtonRight{
+    width: 48%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.element{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.elementLeft{
+    margin-right: 5px;
+    width: 15%;
+    text-align: right;
+   
+}
+.elementRight{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+}
+input{
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid transparent;
+}
+textarea{
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid transparent;
+}

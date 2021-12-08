@@ -1,1 +1,7 @@
-<p>view-change-post works!</p>
+<button (click)="btnClick();" data-test="back">
+    Listado
+</button>
+<div class="container">
+    <h3>Modificar POST</h3>
+<app-post [postData]='postData' [isNew]='false'></app-post>
+</div>

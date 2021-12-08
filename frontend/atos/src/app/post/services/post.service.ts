@@ -29,5 +29,80 @@ export class PostService {
     });
   }
 
+  public addPosts(title: string, body: string, userId: number) {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+          title: title,
+          body: body,
+          userId: userId
+      })
+    };
+
+    return new Promise((resolve, reject) => {
+      fetch(this._cmsUrl+'/posts/', requestOptions).then(async response => {
+          const data = await response.json();
+          if (response.ok) {
+              resolve(data);
+              return;
+          } else {
+              reject('Error');
+              return;
+          }
+      }).catch(error => {
+          reject('Error');
+          return;
+      });
+    });
+  }
+
+  public editPosts(idPost: number, title: string, body: string, userId: number) {
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+          id: idPost,
+          title: title,
+          body: body,
+          userId: userId
+      })
+    };
+    
+    return new Promise((resolve, reject) => {
+      fetch(this._cmsUrl+'/posts/', requestOptions).then(async response => {
+          const data = await response.json();
+          if (response.ok) {
+              resolve(data);
+              return;
+          } else {
+              reject('Error');
+              return;
+          }
+      }).catch(error => {
+          reject('Error');
+          return;
+      });
+    });
+  }
+
+  public getUsers() {
+    return new Promise((resolve, reject) => {
+      fetch(this._cmsUrl+'/users/').then(async response => {
+          const data = await response.json();
+          if (response.ok) {
+              resolve(data.data);
+              return;
+          } else {
+              reject('Error');
+              return;
+          }
+      }).catch(error => {
+          reject('Error');
+          return;
+      });
+    });
+  }
+
 
 }

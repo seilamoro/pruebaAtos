@@ -1,0 +1,19 @@
+.container{
+    border-color:mediumturquoise;
+    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    background-color:honeydew;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+}
+h3{
+    text-align: center;
+}
+button{
+    display: block; margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
