@@ -104,5 +104,12 @@ export class PostService {
     });
   }
 
+  getUsersTest() {
+    return this.httpClient.get<any>(this._cmsUrl+'/users/');
+  }
+
+  getPostsTest() {
+    return this.httpClient.get<any>(this._cmsUrl+'/posts/');
+  }
 
 }
