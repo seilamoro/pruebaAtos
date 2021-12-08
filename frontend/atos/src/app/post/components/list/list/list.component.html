@@ -1,1 +1,25 @@
-<p>list works!</p>
+
+<div *ngIf="this.data" class="list">
+    <table class="table table-list">
+        <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Título</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of this.data.data">
+                <td>
+                    <a [routerLink]="['/post/userPost']" [state]="{data:post}" [attr.data-test]="'user'+post.id">{{ post.userData.username }}</a>
+                </td>
+                <td>
+                    <a [routerLink]="['/post/detailPost']" [state]="{data:post}" [attr.data-test]="'post'+post.id">{{ post.title }}</a>
+                </td>
+                <td>
+                    <a [routerLink]="['/post/changePost']" [state]="{data:post}" [attr.data-test]="'edit'+post.id">editar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

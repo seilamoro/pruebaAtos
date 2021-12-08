@@ -1,0 +1,18 @@
+.table-list>tbody>tr:nth-child(odd)>td, 
+.table-list>tbody>tr:nth-child(odd)>th {
+   background-color: honeydew;
+  }
+.table-list>tbody>tr:nth-child(even)>td, 
+.table-list>tbody>tr:nth-child(even)>th {
+    background-color: #ccc;
+  }
+.table-list>thead>tr>th {
+    background-color: #eee;
+  }
+.list{
+    
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+}
