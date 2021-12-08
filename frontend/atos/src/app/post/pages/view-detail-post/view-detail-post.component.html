@@ -1,1 +1,29 @@
-<p>view-detail-post works!</p>
+<div class="container">
+    <h3>DATOS POST</h3>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Title:</label></div>
+        <div class="elementRight"><label class="label" id="title">{{post.title}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Body:</label></div>
+        <div class="elementRight"><label class="label" id="text">{{post.body}}</label></div>
+    </div>
+    <div *ngFor="let comment of post.comments">
+        <h4>Comentario {{comment.id}}</h4>
+        <div class="element">
+            <div class="elementLeft"><label class="label">Name:</label></div>
+            <div class="elementRight"><label class="label" id="commentName">{{comment.name}}</label></div>
+        </div>
+        <div class="element">
+            <div class="elementLeft"><label class="label">Email:</label></div>
+            <div class="elementRight"><label class="label" id="commentEmail">{{comment.email}}</label></div>
+        </div>
+        <div class="element">
+            <div class="elementLeft"><label class="label">Body:</label></div>
+            <div class="elementRight"><label class="label" id="commentText">{{comment.body}}</label></div>
+        </div>
+    </div>
+    <div class="element">
+        <button (click)="btnClick();" data-test="back">VOLVER</button>
+    </div>
+</div>

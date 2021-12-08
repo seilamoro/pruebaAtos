@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { Post } from './../../interfaces/post.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDetailPostComponent implements OnInit {
 
-  constructor() { }
+  post : Post;
+  constructor(private route:Router) { }
 
   ngOnInit() {
+    this.post = history.state.data;
+    //console.log(this.post);
   }
 
+  btnClick () {
+    this.route.navigateByUrl('/post/post');
+  };
 }
