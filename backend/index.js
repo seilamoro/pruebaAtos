@@ -1,10 +1,23 @@
-const express = require('express')
-const app = express();
+var express = require('express');
+const bodyParser = require('body-parser');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
+var app = express();
 
-app.listen(8000, () => {
-  console.log('Example app listening on port 8000!')
+var cors = require('cors');
+app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.use(require('./routes/index'));
+
+app.get( '/', (req, res)=>{
+    res.json({
+        ok: true,
+        msg: 'Hello World!'
+    });
+} );
+
+app.listen(3000, function () {
+  console.log('App listening on port 3000!');
 });
