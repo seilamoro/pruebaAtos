@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { User } from './../../interfaces/post.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewUserPostComponent implements OnInit {
 
-  constructor() { }
+  user : User;
+  constructor(private route:Router) { }
 
   ngOnInit() {
+    this.user = history.state.data.userData;
   }
 
+  btnClick () {
+    this.route.navigateByUrl('/post/post');
+  };
 }

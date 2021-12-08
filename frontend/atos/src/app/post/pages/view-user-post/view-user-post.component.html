@@ -1,1 +1,64 @@
-<p>view-user-post works!</p>
+<div class="container">
+    <h3>DATOS USUARIO</h3>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Username:</label></div>
+        <div class="elementRight"><label class="label" id="username">{{user.username}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Name:</label></div>
+        <div class="elementRight"><label class="label" id="name">{{user.name}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Email:</label></div>
+        <div class="elementRight"><label class="label" id="email">{{user.email}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Website:</label></div>
+        <div class="elementRight"><label class="label" id="website">{{user.website}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Phone:</label></div>
+        <div class="elementRight"><label class="label" id="phone">{{user.phone}}</label></div>
+    </div>
+    <h3>COMPANY</h3>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Name:</label></div>
+        <div class="elementRight"><label class="label">{{user.company.name}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Bs:</label></div>
+        <div class="elementRight"><label class="label">{{user.company.bs}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">CatchPhrase:</label></div>
+        <div class="elementRight"><label class="label">{{user.company.catchPhrase}}</label></div>
+    </div>
+    <h3>Address</h3>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Street:</label></div>
+        <div class="elementRight"><label class="label">{{user.address.street}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">City:</label></div>
+        <div class="elementRight"><label class="label">{{user.address.city}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Suite:</label></div>
+        <div class="elementRight"><label class="label">{{user.address.suite}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Zipcode:</label></div>
+        <div class="elementRight"><label class="label">{{user.address.zipcode}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Lat:</label></div>
+        <div class="elementRight"><label class="label">{{user.address.geo.lat}}</label></div>
+    </div>
+    <div class="element">
+        <div class="elementLeft"><label class="label">Lng:</label></div>
+        <div class="elementRight"><label class="label">{{user.address.geo.lng}}</label></div>
+    </div>
+    <div class="element">
+        <button (click)="btnClick();" data-test="back">VOLVER</button>
+    </div>
+</div>
